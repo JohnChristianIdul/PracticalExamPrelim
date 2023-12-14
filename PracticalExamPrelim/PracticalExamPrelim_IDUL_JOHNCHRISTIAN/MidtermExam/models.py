@@ -31,7 +31,7 @@ class Procedure(models.Model):
         return str(self.Procedure_Name)
 
 class MedicalHistory(models.Model):
-    proceed = models.ManyToManyField(Procedure)
+    proceed = models.ManyToManyField(Procedure, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
 
 
